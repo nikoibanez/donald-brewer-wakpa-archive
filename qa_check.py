@@ -3,7 +3,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote
 import re
 root=Path('.')
-files=[Path('index.html'),Path('research/index.html'),*sorted(Path('paintings').glob('*.html'))]
+files=[Path('index.html'),Path('research/index.html'),Path('exhibitions/index.html'),Path('publications/index.html'),*sorted(Path('paintings').glob('*.html'))]
 class Audit(HTMLParser):
  def __init__(self):super().__init__();self.refs=[];self.alts=[];self.headings=[]
  def handle_starttag(self,tag,attrs):

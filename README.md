@@ -1,25 +1,41 @@
-# Donald Brewer (Wakpa) — artist portfolio
+# Donald Brewer (Wakpa) — Artist Portfolio
 
-The live artist portfolio is at https://donald-brewer-wakpa-archive.netlify.app.
+Live site: https://donald-brewer-wakpa-archive.netlify.app
 
-This repository contains a static, accessible gallery of 26 publicly listed paintings with artist-authorized reproductions, individual artwork pages with descriptive alternative text, an artist biography, public-art history, commission inquiries, and a separate research archive that preserves 37 catalog records.
+This source-controlled static portfolio includes 26 artist-authorized painting reproductions with individual artwork pages; an independent working catalog of 38 identified auction, gallery, and online-portfolio records; further named print editions; a profile of the artist's work and projects; and a sourced history of exhibitions, awards, publications, and collections.
 
-## Structure
-- `index.html` — artist-led homepage and painting gallery
-- `paintings/*.html` — 26 individual artwork pages
-- `research/index.html` — publication dates, catalog sources, collection references, and project documentation
-- `artwork/` — 26 artist-authorized painting reproductions, sourced from Fine Art America listings
-- `style.css` — typography and responsive layout
-- `catalog.json` — catalog data with artwork descriptions
-- `catalog.original.json` — source record data used for generation
-- `build_portfolio.py` — reproducible static site generator
-- `qa_check.py` — validates local links, basic heading semantics, and image text
-- `ARTWORK-PERMISSIONS.md` — artist authorization context
+## Public pages
 
-## Editorial approach
-The original paintings lead; descriptions are based on visual inspection, not invented symbolism. Dates of online posting are not assumed to be dates of creation. No artificial artwork or archival metadata tags appear in the public gallery. Research details live in the separate research section and the collapsible source information on each artwork page.
+- `index.html`: gallery-led homepage, About Don, Public Art and commissions.
+- `paintings/*.html`: 26 individual painting pages, plus `paintings/other-works.html` listing gallery, auction and historical print references that cannot yet be matched to locally held images.
+- `exhibitions/index.html`: five historical exhibitions (1988–1992), two Heard Museum artist-market appearances (2007 and 2010), two awards (1989 and 1990), and collection/archival references.
+- `publications/index.html`: dated media appearances, 1995 painter directory, 2001 record cover credit, university artist biography, print editions and a YouTube artist-profile video.
+- `research/index.html`: source links, creation-versus-publication dating, primary auction catalogs, undocumented history, and a verification ledger for all twelve user-provided reference links.
+- `research/sources_catalog.json`: structured provenance for exhibitions, awards, and external research links.
+- `artwork/`: twenty-six photographs of artwork reproduced with the artist's explicit permission, from his Fine Art America listings.
 
-## Publishing
-Run `python build_portfolio.py` then `python qa_check.py`. The website has no build dependency. Publish the repository root with Netlify. The current production site was deployed manually by Netlify CLI. GitHub-to-Netlify continuous deployment is not yet configured.
+## Regeneration and validation
 
-Artwork copyright © Donald Brewer (Wakpa). Reproduced with permission for his portfolio. Other use may require separate permission.
+Run the following in order from the repository directory:
+
+```sh
+python update_catalog_sources.py
+python build_portfolio.py
+python incorporate_sources.py
+python qa_check.py
+```
+
+The site uses static HTML and CSS; no Node build dependencies are needed.
+
+## Research standards
+
+* Keep object creation dates distinct from listing, upload, publication, exhibition and auction dates.
+* The Heard Museum artist-file record confirms historical exhibitions and awards. It is **not** by itself evidence of recent (within ten years) exhibitions or of the museum owning original paintings.
+* Collection locations copied from an institutional biography are identified as reported; accession details and current exhibition status remain unverified.
+* Facebook and WorthPoint posts that cannot be accessed independently are listed as research leads, not asserted as evidence.
+* Auction sales are not curated exhibitions.
+* Do not display third-party photos as if their reproduction rights were cleared merely because the artist authorized his underlying work.
+
+Artwork images copyright Donald Brewer (Wakpa). Reproduced with permission. The site is independent of referenced holding institutions and the Cheyenne River Sioux Tribe.
+
+Current deployment is manual via Netlify CLI; GitHub continuous deployment has not been configured.

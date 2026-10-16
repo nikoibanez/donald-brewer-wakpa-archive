@@ -27,3 +27,27 @@ main section{scroll-margin-top:25px}.section{padding:115px 0}.section-heading{ma
 .hero-image{max-width:100%;width:100%;min-width:0;overflow:hidden}
 .hero-image img{max-width:100%;width:100%;height:auto}
 }
+
+.context-band{padding:82px 0;background:#f0f1ec;border-top:1px solid var(--line)}
+.context-band-light{background:var(--paper)}
+.context-band-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:min(12vw,150px);align-items:start}
+.context-band-inner h2{font-size:clamp(2rem,3.6vw,3.5rem);margin-bottom:25px}
+.context-band-inner p{line-height:1.78;color:#414a43;font-size:1.05rem}
+.context-band-inner a{display:inline-block;margin-top:15px}
+.timeline-table td,.timeline-table th{padding:19px 16px 19px 0;vertical-align:top}
+.timeline-table td:first-child,.timeline-table th:first-child{width:165px}
+.source-subline{font-size:.89rem;color:var(--muted);margin:8px 0 0}
+.award-record{display:grid;grid-template-columns:75px 1fr auto;gap:32px;border-top:1px solid var(--line);padding:28px 0}
+.award-record h3{margin-bottom:7px}.award-record p{margin:0;color:var(--muted)}
+.award-record a{font-size:.9rem}
+.important-note{background:#ecefe8;padding:25px 30px;border-left:3px solid #8b493a;margin-top:48px;max-width:none}
+.publication-entry{display:grid;grid-template-columns:138px 1fr;border-top:1px solid var(--line);gap:38px;padding:32px 0}
+.publication-entry h2{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:0 0 8px}
+.publication-entry p{font-size:.96rem;color:#3f4740;margin-top:12px}
+.publication-entry .source-subline{font-size:.82rem;color:var(--muted)}
+.publication-date{font-weight:600;color:var(--muted)}
+.research .publication-ledger{margin-top:46px}
+@media(max-width:850px){.context-band-inner{grid-template-columns:1fr;gap:20px}.award-record{grid-template-columns:75px 1fr}.award-record>div:last-child{grid-column:2}}
+@media(max-width:560px){.context-band{padding:65px 0}.publication-entry{grid-template-columns:1fr;gap:10px}.award-record{gap:15px}.timeline-table{font-size:.84rem}}
+
+.video-embed{aspect-ratio:16/9;width:min(100%,880px);background:#202321;margin:45px 0 60px}.video-embed iframe{width:100%;height:100%;border:0}.other-works-link{margin-top:55px;max-width:42em}.other-works-link a{font-weight:600;text-underline-offset:6px}
