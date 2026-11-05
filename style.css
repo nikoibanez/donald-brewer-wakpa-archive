@@ -23,7 +23,6 @@ main section{scroll-margin-top:25px}.section{padding:115px 0}.section-heading{ma
 .hero{display:block;width:100%;overflow:hidden}
 .hero-copy{min-width:0}
 .hero h1{font-size:clamp(2.85rem,12vw,3.25rem);overflow-wrap:break-word}
-.hero h1 span{display:block}
 .hero-image{max-width:100%;width:100%;min-width:0;overflow:hidden}
 .hero-image img{max-width:100%;width:100%;height:auto}
 }

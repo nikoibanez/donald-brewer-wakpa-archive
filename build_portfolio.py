@@ -93,7 +93,7 @@ tiles=[]
 for w in arr:
     tiles.append(f'<figure class="painting"><a href="{url(w)}"><img loading="lazy" decoding="async" src="{clean(w["image"])}" alt="{clean(w["alt"])}"><figcaption>{clean(w["title"])}</figcaption></a></figure>')
 hero=by_title['Dakota Thunder']
-main= f'''{header()}<main><section class="hero"><div class="hero-copy"><h1>Donald Brewer</h1><div class="artist-alias">Wakpa</div><p class="hero-intro">Paintings and projects by Donald Brewer</p><a class="text-link" href="#paintings">View the paintings</a></div><a class="hero-image" href="{url(hero)}" aria-label="View Dakota Thunder"><img src="{hero['image']}" alt="{clean(hero['alt'])}" fetchpriority="high"></a></section>
+main= f'''{header()}<main><section class="hero"><div class="hero-copy"><h1>Wakpa</h1><div class="artist-alias">Donald Brewer</div><p class="hero-intro"><a class="text-link" href="#commissions">Support an impressive artist — commission an original painting.</a></p><a class="text-link" href="#paintings">View the paintings</a></div><a class="hero-image" href="{url(hero)}" aria-label="View Dakota Thunder"><img src="{hero['image']}" alt="{clean(hero['alt'])}" fetchpriority="high"></a></section>
 <section id="paintings" class="section wrap"><div class="section-heading"><h2>Paintings</h2><p>Prairie landscapes, dancers, riders and portraits.</p></div><div class="gallery">{"".join(tiles)}</div></section>
 <section id="about" class="about"><div class="wrap about-grid"><div><h2>About Don</h2></div><div class="about-text"><p>Donald Brewer, who paints under the name Wakpa, is an artist with Cheyenne River Sioux roots. Raised in Thornton, Colorado, he spent summers with family in South Dakota. His paintings return to the landscape of the Plains, the movement of horses and dancers, and the presence of people within vast open skies.</p><p>For years Don worked primarily in acrylic, developing layered color and precise transitions between figures, clouds and land. More recently, he has begun a new period of experimentation with oil paint and increasingly abstract compositions. He describes the switch in medium as a chance to learn all over again.</p><p>Don also makes traditional regalia and participates in powwow dancing. His experience in community art includes work with students and murals, alongside an extensive painting practice.</p><p>Don served in the U.S. Marine Corps and later worked several years as a firefighter with the San Carlos Apache.</p></div></div></section>
 <section id="public-art" class="work-section wrap"><div class="section-heading"><h2>Public Art</h2><p>Painting beyond the studio.</p></div><div class="project-grid"><div class="project"><h3>School murals</h3><p>Don recalls working with Denver-area middle-school students and teachers on collaborative murals for grades six through eight.</p></div><div class="project"><h3>Murals in Arizona</h3><p>He also recalls murals on buildings around Globe and San Carlos, Arizona, including a Geronimo-themed work that no longer survives.</p></div><div class="project"><h3>New work in oils</h3><p>After decades of acrylic painting, Don is exploring a more abstract direction in oils while continuing his figurative work.</p></div></div></section>
@@ -126,10 +126,7 @@ css_path.write_text(css_path.read_text(encoding='utf-8') + """
 .hero{display:block;width:100%;overflow:hidden}
 .hero-copy{min-width:0}
 .hero h1{font-size:clamp(2.85rem,12vw,3.25rem);overflow-wrap:break-word}
-.hero h1 span{display:block}
 .hero-image{max-width:100%;width:100%;min-width:0;overflow:hidden}
 .hero-image img{max-width:100%;width:100%;height:auto}
 }
 """, encoding='utf-8')
-home_path = root / 'index.html'
-home_path.write_text(home_path.read_text(encoding='utf-8').replace('<h1>Donald Brewer</h1>','<h1>Donald <span>Brewer</span></h1>'), encoding='utf-8')
